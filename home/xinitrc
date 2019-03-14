@@ -1,0 +1,21 @@
+# Screen settings
+xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --brightness 0.5 --primary
+
+# Touchpad settings
+xinput --set-prop 'SYNA2393:00 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1
+xinput --set-prop 'SYNA2393:00 06CB:7A13 Touchpad' 'libinput Natural Scrolling Enabled' 1
+
+# Keyboard settings
+setxkbmap -layout us,fr -option "grp:shift_caps_toggle"
+
+# Compton compositor
+compton --backend glx --paint-on-overlay --vsync opengl-swc &
+
+# Load xresources
+# [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+# Background image
+~/.fehbg &
+
+# Start Qtile
+exec qtile

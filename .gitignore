@@ -1,0 +1,10 @@
+# Themes files
+resources/themes/*
+!resources/themes/archives
+!resources/themes/install_theme.py
+
+# Python cache
+__pycache__
+
+# VSCode
+.vscode
