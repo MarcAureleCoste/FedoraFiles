@@ -1,5 +1,11 @@
+# DBUS
+# ## run all system xinitrc scripts. ##
+for file in /etc/X11/xinit/xinitrc.d/* ; do
+        . $file
+done
+
 # Screen settings
-xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --brightness 0.5 --primary
+xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --brightness 1 --primary
 
 # Touchpad settings
 xinput --set-prop 'SYNA2393:00 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1
@@ -7,6 +13,10 @@ xinput --set-prop 'SYNA2393:00 06CB:7A13 Touchpad' 'libinput Natural Scrolling E
 
 # Keyboard settings
 setxkbmap -layout us,fr -option "grp:shift_caps_toggle"
+
+# Gnome Keyring
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 
 # Compton compositor
 compton --backend glx --paint-on-overlay --vsync opengl-swc &

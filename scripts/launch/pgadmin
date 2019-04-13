@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker-compose -f /home/cmarc/documents/FedoraFiles/docker/pgadmin4/docker-compose.yml up -d
+

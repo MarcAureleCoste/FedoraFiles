@@ -34,12 +34,12 @@ mod = "mod4"
 
 keys = [
     # Switch between windows in current stack pane
-    Key([mod], 'k', lazy.layout.down()),
-    Key([mod], 'j', lazy.layout.up()),
+    Key([mod], 'j', lazy.layout.down()),
+    Key([mod], 'k', lazy.layout.up()),
 
     # Move windows up or down in current stack
-    Key([mod, 'control'], 'k', lazy.layout.shuffle_down()),
-    Key([mod, 'control'], 'j', lazy.layout.shuffle_up()),
+    Key([mod, 'control'], 'j', lazy.layout.shuffle_down()),
+    Key([mod, 'control'], 'k', lazy.layout.shuffle_up()),
 
     # Switch window focus to other pane(s) of stack
     Key([mod], 'space', lazy.layout.next()),
@@ -242,6 +242,7 @@ screens = [
                 widget.GroupBox(highlight_method='line', this_current_screen_border='fea63c'),
                 widget.WindowName(),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p', foreground=colors['n_cyan']),
+                widget.CurrentLayoutIcon(scale=0.7)
             ],
             24
         )
@@ -252,6 +253,7 @@ screens = [
                 widget.GroupBox(highlight_method='line', this_current_screen_border='fea63c'),
                 widget.WindowName(),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p', foreground=colors['n_cyan']),
+                widget.CurrentLayoutIcon(scale=0.7)
             ],
             24
         )
@@ -262,6 +264,7 @@ screens = [
                 widget.GroupBox(highlight_method='line', this_current_screen_border='fea63c'),
                 widget.WindowName(),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p', foreground=colors['n_cyan']),
+                widget.CurrentLayoutIcon(scale=0.7)
             ],
             24
         )
@@ -298,6 +301,8 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'branchdialog'},  # gitk
     {'wname': 'pinentry'},  # GPG key password entry
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
+    {'wname': 'Steam Login'},
+    {'wname': 'About Steam'}
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"

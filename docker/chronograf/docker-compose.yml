@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  chronograf:
+    image: quay.io/influxdb/chronograf
+    container_name: chronograf
+    network_mode: host
+    volumes:
+      - g_chronograf:/var/lib/chronograf
+    ports:
+      - "8888:8888"
+
+volumes:
+  g_chronograf:

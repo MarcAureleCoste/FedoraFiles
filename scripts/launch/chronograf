@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker-compose -f /home/cmarc/documents/FedoraFiles/docker/chronograf/docker-compose.yml up -d

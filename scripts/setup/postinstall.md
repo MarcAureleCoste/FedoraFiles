@@ -18,20 +18,17 @@ sudo dnf install \
     bluez-tools \
     bzip2 \
     compton \
-    dbus-glib \
+    dbus-x11 \
+    dunst \
     feh \
     flatpak \
     fontconfig-devel \
     freetype-devel \
     fuse-exfat \
-    gcc \
     git \
-    gtk3 \
     htop \
     lbzip2 \
     libicu \
-    libX11-devel \
-    libXft-devel \
     libXrandr-devel \
     libXScrnSaver \
     mlocate \
@@ -40,7 +37,6 @@ sudo dnf install \
     ntfs-3g \
     p7zip \
     pciutils \
-    pkgconf-pkg-conf \
     pulseaudio \
     pulseaudio-module-bluetooth \
     qtile \
@@ -50,7 +46,7 @@ sudo dnf install \
     tar \
     udisks2 \
     wget \
-    xorg-x11-proto-devel \
+    gnome-keyring \
 ```
 
 ## GOOGLE CHROME
@@ -78,15 +74,40 @@ cd ~ && mkdir workspace && cd workspace
 mkdir blog
 ```
 
+### Firefox
+
+```sh
+sudo dnf install \
+    gtk3 \
+    dbus-glib \
+```
+
 ### ST
 ```sh
+sudo dnf install \
+    gcc \
+    make \
+    pkgconf-pkg-config \
+    freetype \
+    fontconfig \
+    xorg-x11-proto-devel \
+    libX11-devel \
+    libXft-devel \
+
 mkdir suckless && cd suckless
 git clone https://git.suckless.org/st
 ```
 
+### VSCode
+```sh
+sudo dnf install \
+    compat-openssl10 \
+```
+
 ### QEMU
 ```sh
-dnf install SDL2-devel \
+dnf install \
+    SDL2-devel \
     libjpeg-turbo-devel \
     glib2-devel \
     pixman-devel \
