@@ -52,6 +52,18 @@ sudo dnf install \
 ## GOOGLE CHROME
 Go to `https://www.google.com/chrome/`
 
+## Flatpak CMD
+```sh
+# show permissions
+flatpak info --show-permissions appid
+
+# set permissions
+flatpak override --user --filesystem=/your/path/ appid
+
+# reset permission
+flatpak override --user --reset com.valvesoftware.Steam
+```
+
 ## Flathub
 ```sh
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo

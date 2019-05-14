@@ -1,4 +1,4 @@
 #!/bin/bash
 
-flatpak run com.slack.Slack
+flatpak run --filesystem=/tmp com.slack.Slack
 

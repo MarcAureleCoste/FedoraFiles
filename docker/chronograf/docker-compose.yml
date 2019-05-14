@@ -2,7 +2,7 @@ version: "3"
 
 services:
   chronograf:
-    image: quay.io/influxdb/chronograf
+    image: chronograf:1.7-alpine
     container_name: chronograf
     network_mode: host
     volumes:

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-flatpak run org.libreoffice.LibreOffice
+flatpak run --filesystem=/tmp org.libreoffice.LibreOffice
