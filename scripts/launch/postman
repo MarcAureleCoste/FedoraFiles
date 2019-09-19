@@ -1,4 +1,4 @@
 #!/bin/bash
 
-flatpak run com.getpostman.Postman
+flatpak run --filesystem=/tmp com.getpostman.Postman
 

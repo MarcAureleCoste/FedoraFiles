@@ -5,7 +5,7 @@ for file in /etc/X11/xinit/xinitrc.d/* ; do
 done
 
 # Screen settings
-xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --brightness 1 --primary
+xrandr --output eDP-1 --mode 2560x1440 --pos 0x0 --brightness 1 --primary
 
 # Touchpad settings
 xinput --set-prop 'SYNA2393:00 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if docker ps -a --format '{{.Names}}' | grep -Eq "^pipenvlock\$"; then
+    rm -r /tmp/virtualenvs/*
+    docker rm pipenvlock
+    docker run \
+        --volume $PWD/:/home/pipenv-user/app/ \
+        --volume /tmp/virtualenvs/:/home/pipenv-user/.local/share/virtualenvs/ \
+        --env PYPI_USERNAME='coe-analytics-jenkins' \
+        --env PYPI_PASSWORD='AP47UqV3HfrVGWU6LN63dn66Vk5GXja2MiPxC7QmGHev9nPHHt8Ls1B5ryP5' \
+        --name pipenvlock \
+        marcaurelecoste/pipenv \
+        bash -c "cd app && pipenv lock"
+else
+    docker run \
+        --volume $PWD/:/home/pipenv-user/app/ \
+        --volume /tmp/virtualenvs/:/home/pipenv-user/.local/share/virtualenvs/ \
+        --env PYPI_USERNAME='coe-analytics-jenkins' \
+        --env PYPI_PASSWORD='AP47UqV3HfrVGWU6LN63dn66Vk5GXja2MiPxC7QmGHev9nPHHt8Ls1B5ryP5' \
+        --name pipenvlock \
+        marcaurelecoste/pipenv \
+        bash -c "cd app && pipenv lock"
+fi

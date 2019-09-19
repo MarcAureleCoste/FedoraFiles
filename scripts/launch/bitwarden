@@ -1,4 +1,4 @@
 #!/bin/bash
 
-flatpak run com.bitwarden.desktop
+flatpak run --filesystem=/tmp com.bitwarden.desktop --no-sandbox
 

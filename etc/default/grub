@@ -1,8 +1,2 @@
-GRUB_TIMEOUT=5
-GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
-GRUB_DEFAULT=saved
-GRUB_DISABLE_SUBMENU=true
-GRUB_TERMINAL_OUTPUT="console"
-# GRUB_CMDLINE_LINUX="resume=/dev/mapper/fedora-swap rd.lvm.lv=fedora/root rd.luks.uuid=luks-ed12492b-954f-47d6-8be0-50258c49b419 rd.lvm.lv=fedora/swap rhgb quiet modprobe.blacklist=nouveau iommu=on,igfx_off intel_iommu=on rd.driver.pre=vfio-pci kvm.ignore_msrs=1"
-GRUB_CMDLINE_LINUX="resume=/dev/mapper/fedora-swap rd.lvm.lv=fedora/root rd.luks.uuid=luks-ed12492b-954f-47d6-8be0-50258c49b419 rd.lvm.lv=fedora/swap rhgb quiet iommu=on,igfx_off intel_iommu=on rd.driver.pre=vfio-pci kvm.ignore_msrs=1"
-GRUB_DISABLE_RECOVERY="true"
+# GRUB_CMDLINE_LINUX="modprobe.blacklist=nouveau iommu=on,igfx_off intel_iommu=on rd.driver.pre=vfio-pci kvm.ignore_msrs=1"
+GRUB_CMDLINE_LINUX="iommu=on,igfx_off intel_iommu=on rd.driver.pre=vfio-pci kvm.ignore_msrs=1 mem_sleep_default=deep"

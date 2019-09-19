@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source $HOME/applications/miniconda3/bin/activate jupyter
+cd $HOME/workspace
+jupyter lab --port=8889

@@ -15,6 +15,7 @@ sudo dnf update
 sudo dnf install \
     alsa-lib \
     alsa-utils \
+    alsa-plugins-pulseaudio \
     bluez-tools \
     bzip2 \
     compton \
@@ -36,9 +37,12 @@ sudo dnf install \
     nss \
     ntfs-3g \
     p7zip \
+    pavucontrol \
     pciutils \
     pulseaudio \
     pulseaudio-module-bluetooth \
+    pulseaudio-utils \
+    python3-dnf-plugin-system-upgrade \
     qtile \
     ranger \
     scrot \

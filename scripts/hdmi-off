@@ -1,3 +1,5 @@
 #!/bin/bash
 
-xrandr --output DP-3 --off
+OUTPUT=$1
+xrandr --output $OUTPUT --off
+~/.fehbg &

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+qemu-system-x86_64 \
+  -name "Fedora" \
+  -machine type=q35,accel=kvm \
+  -global ICH9-LPC.disable_s3=1 \
+  -global ICH9-LPC.disable_s4=1 \
+  -enable-kvm \
+  -cpu host,kvm=off,-hypervisor,hv_vapic,hv_relaxed,hv_spinlocks=0x1fff,hv_time,hv_vendor_id=nvidia43_fix \
+  -smp 12,sockets=1,cores=6,threads=2 \
+  -m 6G \
+  -mem-prealloc \
+  -rtc clock=host,base=localtime \
+  -device qxl,bus=pcie.0,addr=1c.4,id=video.2 \
+  -vga qxl \
+  -serial none \
+  -parallel none \
+  -k en-us \
+  -usb \
+  -device ioh3420,bus=pcie.0,addr=1c.0,multifunction=on,port=1,chassis=1,id=root.1 \
+  -device vfio-pci,host=01:00.0,bus=root.1,addr=00.0,x-pci-sub-device-id=0x087c,x-pci-sub-vendor-id=0x1028,multifunction=on,romfile=./vBIOS/nvidia/nvidia.rom \
+  -drive if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE.fd \
+  -drive if=pflash,format=raw,file=WIN_VARS.fd \
+  -boot menu=on \
+  -boot order=b \
+  -drive format=qcow2,file=./Fedora03.qcow2 \
+  -drive file=Win10_1809Oct_English_x64.iso,index=1,media=cdrom \
+  -device pci-bridge,addr=12.0,chassis_nr=2,id=head.2 \
+  -device usb-tablet \
+  -net nic,model=virtio \
+  -net user,hostfwd=tcp::2222-:22

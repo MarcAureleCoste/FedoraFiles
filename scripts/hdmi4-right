@@ -1,3 +1,4 @@
 #!/bin/bash
 
 xrandr --output DP-3 --mode 3840x2160 --rate 60.0 --pos +1920x0
+~/.fehbg &
